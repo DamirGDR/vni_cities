@@ -156,7 +156,7 @@ def main():
             FROM t_trade
             WHERE t_trade.status=1 
                 AND t_trade.way=26 
-                AND t_trade.`type` IN (1,2,5,6,7) 
+                AND t_trade.`type` IN (1,2,6,7) 
             GROUP BY DATE_FORMAT(t_trade.`date`, '%%Y-%%m-%%d'), t_trade.city_id
             ORDER BY DATE_FORMAT(t_trade.`date`, '%%Y-%%m-%%d') DESC, t_trade.city_id DESC) AS vyruchka_uspeh_payTabs
     ),
@@ -180,7 +180,7 @@ def main():
                 FROM t_trade
                 WHERE t_trade.status=1 
                     AND t_trade.way=26 
-                    AND t_trade.`type` IN (1,2,5,6,7) 
+                    AND t_trade.`type` IN (1,2,6,7) 
                 GROUP BY DATE_FORMAT(t_trade.`date`, '%%Y-%%m-%%d'), t_trade.city_id
                 ORDER BY DATE_FORMAT(t_trade.`date`, '%%Y-%%m-%%d') DESC, t_trade.city_id DESC) AS vyruchka_uspeh_payTabs)
             AS vyruchka_uspeh_payTabs
